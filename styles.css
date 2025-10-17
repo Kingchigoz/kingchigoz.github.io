@@ -1554,7 +1554,7 @@ a:hover {
     }
 
     .nav-brand h2 {
-        font-size: 1rem;
+        font-size: 1.35rem;
         font-weight: 600;
     }
 
@@ -1613,7 +1613,7 @@ a:hover {
     }
 
     .hero-content h1 {
-        font-size: 1.75rem !important;
+        font-size: 1.5rem !important;
         margin-bottom: var(--space-md);
         line-height: 1.3;
     }
