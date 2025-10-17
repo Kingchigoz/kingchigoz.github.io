@@ -1602,19 +1602,19 @@ a:hover {
     }
 
     .hero {
-        padding: calc(40px + var(--space-md)) 0 var(--space-md);
+        padding: calc(60px + var(--space-xl)) 0 var(--space-xl);
     }
 
     .hero-container {
         grid-template-columns: 0.6fr 0.4fr;
-        gap: var(--space-md);
+        gap: var(--space-lg);
         text-align: left;
-        padding: 0 var(--space-sm);
+        padding: 0 var(--space-lg);
     }
 
     .hero-content h1 {
         font-size: 1.5rem !important;
-        margin-bottom: var(--space-md);
+        margin-bottom: var(--space-lg);
         line-height: 1.3;
     }
 
