@@ -1683,9 +1683,9 @@ a:hover {
     }
 
     .hero-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 0.6fr 0.4fr;
         gap: var(--space-md);
-        text-align: center;
+        text-align: left;
         padding: 0 var(--space-sm);
     }
 
@@ -1711,13 +1711,93 @@ a:hover {
     }
 
     .cta-buttons {
-        justify-content: center;
+        justify-content: flex-start;
         gap: var(--space-sm);
     }
 
-    /* Hide phone mockup on mobile - saves space and content is redundant */
+    /* Show phone mockup on mobile with scaled-down size */
     .hero-image {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .phone-mockup {
+        width: 140px;
+        height: 280px;
+        padding: 6px;
+        border-radius: 20px;
+    }
+
+    .phone-mockup::before {
+        width: 35px;
+        height: 2px;
+        top: 5px;
+    }
+
+    .phone-mockup::after {
+        width: 6px;
+        height: 6px;
+        top: 3px;
+    }
+
+    .screen {
+        border-radius: 15px;
+    }
+
+    .app-preview {
+        padding: var(--space-sm);
+    }
+
+    .dashboard-header {
+        margin-bottom: var(--space-sm);
+        padding-bottom: var(--space-sm);
+    }
+
+    .dashboard-header h3 {
+        font-size: 0.6rem;
+    }
+
+    .user-greeting {
+        font-size: 0.4rem !important;
+    }
+
+    .quick-actions {
+        gap: var(--space-xs);
+        padding-bottom: var(--space-sm);
+    }
+
+    .action-card {
+        padding: 0.3rem;
+        border-radius: 6px;
+    }
+
+    .action-icon {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+
+    .action-content h4 {
+        font-size: 0.4rem !important;
+        margin-bottom: 2px;
+    }
+
+    .action-content p {
+        font-size: 0.35rem !important;
+    }
+
+    .bottom-tabs {
+        padding: 0.3rem 0;
+        border-radius: 8px;
+    }
+
+    .tab-item {
+        font-size: 0.3rem;
+        gap: 2px;
+    }
+
+    .tab-item span:first-child {
+        font-size: 0.6rem;
     }
 
     .features-grid {
