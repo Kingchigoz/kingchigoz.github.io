@@ -538,6 +538,28 @@ a:hover {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show light mode screenshot by default */
+.light-mode-screenshot {
+    opacity: 1;
+}
+
+.dark-mode-screenshot {
+    opacity: 0;
+}
+
+/* Switch to dark mode screenshot when dark theme is active */
+[data-theme="dark"] .light-mode-screenshot {
+    opacity: 0;
+}
+
+[data-theme="dark"] .dark-mode-screenshot {
+    opacity: 1;
 }
 
 
