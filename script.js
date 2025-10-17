@@ -160,15 +160,28 @@ document.head.appendChild(style);
 function toggleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     const hamburger = document.getElementById('hamburger');
+    const backdrop = document.querySelector('.nav-menu-backdrop');
 
     navMenu.classList.toggle('active');
     hamburger.classList.toggle('active');
+
+    if (backdrop) {
+        backdrop.classList.toggle('active');
+    }
 }
 
 // Initialize hamburger menu
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelectorAll('.nav-menu a');
+
+    // Create backdrop element
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-menu-backdrop';
+    document.body.appendChild(backdrop);
+
+    // Add click event to backdrop to close menu
+    backdrop.addEventListener('click', toggleMobileMenu);
 
     if (hamburger) {
         hamburger.addEventListener('click', toggleMobileMenu);
@@ -183,16 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const navMenu = document.querySelector('.nav-menu');
-        const isClickInsideMenu = navMenu.contains(event.target);
-        const isClickOnHamburger = hamburger && hamburger.contains(event.target);
-
-        if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
-            toggleMobileMenu();
-        }
-    });
+    // Close menu when clicking outside (disabled since backdrop handles this)
+    // The backdrop click event now handles closing the menu
 });
 
 // Age verification notice
