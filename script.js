@@ -1,4 +1,17 @@
-// Scroll to top on page load/refresh
+// Disable browser's automatic scroll restoration
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Scroll to top immediately on page load
+window.scrollTo(0, 0);
+
+// Additional scroll to top on beforeunload (before page refresh)
+window.addEventListener('beforeunload', function() {
+    window.scrollTo(0, 0);
+});
+
+// Backup: Scroll to top on load event
 window.addEventListener('load', function() {
     window.scrollTo(0, 0);
 });
