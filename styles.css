@@ -498,12 +498,15 @@ a:hover {
     }
 }
 
-.phone-mockup:hover {
-    transform: translateZ(20px) rotateY(0deg) rotateX(0deg) scale(1.02);
-    box-shadow:
-        0 60px 120px rgba(0, 0, 0, 0.5),
-        0 30px 60px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
+/* Only apply hover effects on devices with hover capability (not touch screens) */
+@media (hover: hover) {
+    .phone-mockup:hover {
+        transform: translateZ(20px) rotateY(0deg) rotateX(0deg) scale(1.02);
+        box-shadow:
+            0 60px 120px rgba(0, 0, 0, 0.5),
+            0 30px 60px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
 }
 
 .phone-mockup::before {
