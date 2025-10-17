@@ -1526,6 +1526,38 @@ a:hover {
     font-size: var(--font-size-sm);
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-sm);
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 28px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     :root {
@@ -1535,17 +1567,69 @@ a:hover {
         --space-2xl: 1.5rem;
     }
 
+    /* Mobile header fixes */
+    .nav {
+        padding: var(--space-sm) 0;
+    }
+
+    .nav-container {
+        padding: 0 var(--space-md);
+    }
+
+    .nav-brand h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Show hamburger on mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Mobile navigation menu */
     .nav-menu {
-        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--glass-bg);
+        backdrop-filter: var(--blur);
+        -webkit-backdrop-filter: var(--blur);
+        flex-direction: column;
+        padding: var(--space-lg);
+        gap: var(--space-md);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: var(--space-md);
+        width: 100%;
     }
 
     .hero {
-        padding: calc(80px + var(--space-xl)) 0 var(--space-xl);
+        padding: calc(60px + var(--space-lg)) 0 var(--space-lg);
     }
 
     .hero-container {
         grid-template-columns: 1fr;
-        gap: var(--space-xl);
+        gap: var(--space-lg);
         text-align: center;
     }
 
@@ -1553,10 +1637,48 @@ a:hover {
         justify-content: center;
     }
 
+    /* Make phone mockup smaller and fit better */
     .phone-mockup {
-        width: 280px;
-        height: 560px;
-        padding: 12px;
+        width: 240px;
+        height: 480px;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .dashboard-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .user-greeting {
+        font-size: 0.8rem;
+    }
+
+    .action-card {
+        padding: var(--space-sm);
+    }
+
+    .action-icon {
+        font-size: 1.5rem;
+    }
+
+    .action-content h4 {
+        font-size: 0.8rem;
+    }
+
+    .action-content p {
+        font-size: 0.7rem;
+    }
+
+    .bottom-tabs {
+        padding: var(--space-sm) 0;
+    }
+
+    .tab-item {
+        font-size: 0.65rem;
+    }
+
+    .tab-item span:first-child {
+        font-size: 1.1rem;
     }
 
     .features-grid {

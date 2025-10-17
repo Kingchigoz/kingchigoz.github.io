@@ -156,11 +156,44 @@ const style = document.createElement('style');
 style.textContent = fadeInCSS;
 document.head.appendChild(style);
 
-// Mobile menu toggle (if needed in future)
+// Mobile menu toggle
 function toggleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.getElementById('hamburger');
+
     navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
 }
+
+// Initialize hamburger menu
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                toggleMobileMenu();
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const navMenu = document.querySelector('.nav-menu');
+        const isClickInsideMenu = navMenu.contains(event.target);
+        const isClickOnHamburger = hamburger && hamburger.contains(event.target);
+
+        if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+});
 
 // Age verification notice
 function showAgeNotice() {
