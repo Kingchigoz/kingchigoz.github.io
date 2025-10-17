@@ -1,3 +1,8 @@
+// Scroll to top on page load/refresh
+window.addEventListener('load', function() {
+    window.scrollTo(0, 0);
+});
+
 // Theme switching functionality
 function initTheme() {
     const themeToggle = document.getElementById('theme-toggle');
@@ -5,13 +10,9 @@ function initTheme() {
 
     if (!themeToggle || !themeIcon) return;
 
-    // Check if mobile device
-    const isMobile = window.innerWidth <= 768;
-
-    // Check for saved theme preference or default based on device
-    // Mobile defaults to dark, desktop defaults to light
-    const defaultTheme = isMobile ? 'dark' : 'light';
-    const currentTheme = localStorage.getItem('theme') || defaultTheme;
+    // Check for saved theme preference or default to light mode
+    // Always default to light mode on first visit
+    const currentTheme = localStorage.getItem('theme') || 'light';
 
     document.documentElement.setAttribute('data-theme', currentTheme);
 
