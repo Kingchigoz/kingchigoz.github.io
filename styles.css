@@ -1597,28 +1597,6 @@ a:hover {
         --font-size-3xl: 1.5rem;
         --space-3xl: 2rem;
         --space-2xl: 1.5rem;
-
-        /* Force dark mode on mobile */
-        --bg: #0f0f13;
-        --bg-secondary: #1a1a20;
-        --text-primary: #ffffff;
-        --text-secondary: #c1c1c1;
-        --text-light: #9a9a9a;
-        --border: #2a2a35;
-        --shadow: rgba(255, 255, 255, 0.08);
-        --dark-gradient-primary: linear-gradient(135deg, #0f0f13 0%, #1a1a20 50%, #20202a 100%);
-        --dark-gradient-secondary: linear-gradient(135deg, #1a1a20 0%, #20202a 50%, #25253a 100%);
-        --dark-hero-gradient: linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #1a1a25 100%);
-        --glass-bg: rgba(26, 26, 32, 0.7);
-        --glass-border: rgba(255, 255, 255, 0.1);
-    }
-
-    body {
-        background: var(--dark-gradient-primary);
-    }
-
-    .hero {
-        background: var(--dark-hero-gradient);
     }
 
     /* Mobile header fixes */

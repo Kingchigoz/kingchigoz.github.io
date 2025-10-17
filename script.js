@@ -5,8 +5,14 @@ function initTheme() {
 
     if (!themeToggle || !themeIcon) return;
 
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // Check if mobile device
+    const isMobile = window.innerWidth <= 768;
+
+    // Check for saved theme preference or default based on device
+    // Mobile defaults to dark, desktop defaults to light
+    const defaultTheme = isMobile ? 'dark' : 'light';
+    const currentTheme = localStorage.getItem('theme') || defaultTheme;
+
     document.documentElement.setAttribute('data-theme', currentTheme);
 
     // Update icon and aria-label based on current theme
