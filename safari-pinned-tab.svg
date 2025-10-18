@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <g fill="none" stroke="#000" stroke-width="8">
+    <!-- Top circle -->
+    <circle cx="90" cy="45" r="18"/>
+    <!-- Right circle -->
+    <circle cx="135" cy="90" r="18"/>
+    <!-- Bottom circle -->
+    <circle cx="90" cy="135" r="18"/>
+    <!-- Left circle -->
+    <circle cx="45" cy="90" r="18"/>
+    <!-- Center circle -->
+    <circle cx="90" cy="90" r="18"/>
+  </g>
+</svg>
