@@ -56,9 +56,28 @@ function updateThemeIcon(theme, iconElement) {
     iconElement.textContent = theme === 'dark' ? '☀️' : '🌙';
 }
 
+// Brand link scroll to top (for homepage)
+document.addEventListener('DOMContentLoaded', function() {
+    const brandLink = document.getElementById('brand-home');
+    if (brandLink) {
+        brandLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        // Skip if it's the brand-home link (already handled above)
+        if (this.id === 'brand-home') {
+            return;
+        }
+
         e.preventDefault();
 
         const target = document.querySelector(this.getAttribute('href'));
